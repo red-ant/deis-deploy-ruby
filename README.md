@@ -1,6 +1,8 @@
 Deis Deploy Ruby
 ================
 
+[![Gem Version](https://badge.fury.io/rb/deis_deploy_redant.svg)](https://badge.fury.io/rb/deis_deploy_redant)
+
 This gem allows you to deploy and notify your deploy to the Red Ant Deis cluster.
 
 If you're not a developer at Red Ant this gem will not be immediately useful but may be a nice starting point for Deis deploy notifications.
@@ -19,7 +21,7 @@ Setup
 In your `Gemfile`
 
 ```ruby
-gem 'deis_deploy_redant', :group => 'development'
+gem 'deis_deploy_redant'
 ```
 
 Create an initialiser to configure the gem
@@ -42,7 +44,7 @@ $ bundle exec rails deis:deploy[REMOTE_NAME]
 Or to notify without pushing a new deploy
 
 ```bash
-$ bundle exec rails deis:notify[REMOTE_NAME]
+$ bundle exec rails deis:report[REMOTE_NAME]
 ```
 
 Tests

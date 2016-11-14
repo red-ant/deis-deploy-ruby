@@ -35,7 +35,7 @@ def report_deis_deploy(git_remote)
   current_git_sha = `git rev-parse HEAD`
 
   deploy_message = ''
-  if previous_git_sha.empty?
+  if previous_git_sha.nil? || previous_git_sha.empty?
     deploy_message = 'Initial commit, see github for full change list'
   elsif DeisDeployRedant.configuration.deploy_message_merges
     # Get merges between releases

@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    deis_deploy_redant (0.0.1)
+    deis_deploy_redant (0.0.2)
 
 GEM
   remote: https://rubygems.org/
@@ -38,8 +38,8 @@ PLATFORMS
 DEPENDENCIES
   bundler (~> 1.5)
   deis_deploy_redant!
-  rspec
-  webmock
+  rspec (~> 3.5)
+  webmock (~> 2.1)
 
 BUNDLED WITH
    1.12.5
