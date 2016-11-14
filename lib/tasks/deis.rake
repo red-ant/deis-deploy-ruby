@@ -30,7 +30,7 @@ end
 def report_deis_deploy(git_remote)
   remote_path = `git remote get-url #{git_remote}`
   app_name = /2222\/(?<deis_app>.+?)\.git/.match(remote_path)[:deis_app]
-  deploy_user = /You are (?<username>.+?) /.match(`deis whoami`)
+  deploy_user = /You are (?<username>.+?) /.match(`deis whoami`)[:username]
   previous_git_sha = HTTParty.get("#{DeisDeployRedant.configuration.billing_app_url}#{app_name}").parsed_response
   current_git_sha = `git rev-parse HEAD`
 
@@ -47,11 +47,11 @@ def report_deis_deploy(git_remote)
 
   HTTParty.post(
     "#{DeisDeployRedant.configuration.billing_app_url}#{app_name}/report-deploy",
-    :body => JSON.dump({
+    :body => {
       :git_sha        => current_git_sha,
       :user           => deploy_user,
       :deploy_message => deploy_message
-    })
+    }
   )
 end
 
