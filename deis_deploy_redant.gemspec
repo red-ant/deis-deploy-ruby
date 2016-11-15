@@ -2,8 +2,8 @@
 
 Gem::Specification.new do |s|
   s.name        = 'deis_deploy_redant'
-  s.version     = '0.0.3'
-  s.date        = '2016-11-14'
+  s.version     = '0.0.4'
+  s.date        = '2016-11-15'
   s.summary     = 'Deploy apps to the Red Ant Deis cluster and notify deployments'
   s.description = 'Automates the process of pushing a new release and sending a deploy notification to the billing api'
   s.authors     = ['Thomas Davies']
